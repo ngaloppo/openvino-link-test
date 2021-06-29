@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.4.3)
 
-project(sysl_link_test CXX)
+project(sycl_link_test CXX)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
