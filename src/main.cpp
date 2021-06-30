@@ -1,4 +1,4 @@
-#include "ocl_ext.hpp"
+#include <inference_engine.hpp>
 
 int main (int argc, char** argv) {
     if (argc < 2 || std::string(argv[1]) == "-h" || std::string(argv[1]) == "--help") {
@@ -10,7 +10,6 @@ int main (int argc, char** argv) {
 
     // Load network
     InferenceEngine::Core ie;
-    ie.AddExtension(std::make_shared<InfEngineNgraphExtension>(), "CPU");
     InferenceEngine::CNNNetwork net = ie.ReadNetwork(modelPath);
 
     InferenceEngine::ExecutableNetwork execNet = ie.LoadNetwork(net, "CPU");
