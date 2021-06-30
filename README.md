@@ -1,18 +1,13 @@
-# sycl_link_test
+# openvino_link_test
 
-1. Create a file `config.txt`:
+Reproducer for [OpenVINO issue #6454](https://github.com/openvinotoolkit/openvino/issues/6454).
+
+Replace `<YOUR_CXX_COMPILER_EXE>` below with the compiler you'd like to test. Currently `g++` works, but any flavor of `clang++` fails (tested with `clang++-8` and `clang++-12`).
 
 ```
-tbb=exclude
-```
-
-2. Build a project
-```
-source <ONE_API_ROOT>/setvars.sh --config=config.txt
-
 mkdir build
 cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release -DInferenceEngine_DIR=<OPENVINO_DIR>/deployment_tools/inference_engine/share
+cmake .. -DCMAKE_BUILD_TYPE=Release -DInferenceEngine_DIR=<OPENVINO_DIR>/deployment_tools/inference_engine/share -DCMAKE_CXX_COMPILER=<YOUR_CXX_COMPILER_EXE>
 make -j$(nproc --all)
 ```
 

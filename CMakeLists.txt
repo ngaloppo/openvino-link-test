@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.4.3)
 
-project(sycl_link_test CXX)
+project(openvino_link_test CXX)
 
-set(CMAKE_CXX_COMPILER clang++-12)
+#set(CMAKE_CXX_COMPILER clang++-12)
 #set(CMAKE_CXX_STANDARD 11)
 
 find_package(InferenceEngine REQUIRED)
